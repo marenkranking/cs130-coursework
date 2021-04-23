@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Ubuntu:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Ubuntu:ital,wght@0,300;0,700;1,300;1,700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,19 +9,102 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+/* HEADER */
+
 header {
-    text-transform: uppercase;
+    height: 100vh;
+    width: 80vw;
+    position: fixed;
 }
 
-header, section {
-    padding: 20px;
+main {
+    margin-left: 80vw;
+    width: 20vw;
 }
+
+figure img {
+    width: 100%;
+    position: absolute;
+    margin-top: 30px;
+}
+
+
+/* TUTORIAL & HOMEWORK SECTIONS */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section > div {
+    padding: 120px 10px;
+    border-radius: 10px;
+    background-color: #EDEDED;
+}
+
+section {
+    padding: 20px;
+    width: 100%;
+}
+
+
+/* INSPIRATION SECTION */
+
+#inspiration > div {
+    background-color: #af9a9d;
+}
+
+/* TEXT FORMATTING */
+
+h1 {
+    font-size: 135px;
+    color: #a0757a;
+    text-transform: uppercase;
+    margin-top: 80px;
+    margin-bottom: 0;
+    margin-left: 60px;
+    z-index: 0;
+}
+
+header h2 {
+    font-size: 50px;
+    color: #878686;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-left: 60px;
+    margin-top: 0;
+}
+
+section h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: -70px;
+    color: #96c0b7;
+}
+
+#inspiration h2{
+    color: white;
+}
+
 p, li {
     line-height: 1.5em;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
 }
 
-#inspiration {
-    background-color: #F0F0F0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+a {
+    color: black;
+}
+
+a:hover {
+    color: #a0757a;
+}
+
+#inspiration a {
+    color: white;
+}
+
+#inspiration a:hover {
+    color: #96c0b7;
 }
