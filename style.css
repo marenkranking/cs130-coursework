@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Ubuntu:ital,wght@0,700;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header {
+    text-transform: uppercase;
+}
+
+header, section {
+    padding: 20px;
+}
+p, li {
+    line-height: 1.5em;
+}
+
+#inspiration {
+    background-color: #F0F0F0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
