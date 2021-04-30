@@ -1,0 +1,271 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    color: #fff;
+}
+a, a:hover, a:visited, a:active { 
+    color: #fff;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/**********/
+/* Layout */
+/**********/
+aside, footer, header, nav, section, article {
+    display: flex;
+    flex-direction: column;
+}
+body {
+    overflow: hidden;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto 100px;
+    grid-template-areas:
+       "left main"
+       "bottom bottom";
+    height: 100vh;
+}
+aside {
+    background-color: #000;
+    grid-area: left;
+}
+header {
+    background: #111;
+    position: fixed;
+    width: calc(100vw - 250px);
+    left: 250px;
+}
+
+main {
+    background: #111;
+    grid-area: main;
+    min-height: calc(350px);
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    z-index: 3;
+}
+
+nav {
+    margin-top: 100px;
+}
+
+footer {
+    background: #222;
+    grid-area: bottom;
+}
+
+
+/***************************/
+/* Accessories & Florishes */
+/***************************/
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box;
+    min-height: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0,0%,100%,.3);
+}
+
+/***************************/
+/* Part A: Left Navigation */
+/***************************/
+
+#sidebar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#sidebar h1 {
+    margin-top: 0;
+    padding: 25px;
+    font-size: 35px;
+}
+
+#sidebar h1 i {
+    padding: 0;
+    font-size: 50px;
+}
+
+#sidebar a {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    color: #D2D1D1;
+}
+
+#sidebar a:hover {
+    color: white;
+}
+
+#sidebar i {
+    padding-right: 17px;
+}
+
+.selected_sidebar {
+    color: white !important;
+    border-left: 3px solid rgb(29,186,84);
+}
+
+/********************************/
+/* Part B: Header & Nav Styling */
+/********************************/
+
+header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+#upgrade, #profile {
+    border-radius: 20px;
+    padding: 9px 40px;
+    margin: 35px 15px;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #D2D1D1;
+}
+
+#upgrade {
+    border: solid 1px #D2D1D1;
+}
+
+#upgrade:hover {
+    background-color: #383838;
+    color: white;
+    border-color: white;
+}
+
+#profile {
+    background-color: #222;
+    font-weight: 700;
+    margin-right: 40px;
+}
+
+#profile:hover {
+    background-color: #383838;
+    color: white;
+}
+
+nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    margin-left: 30px;
+}
+
+nav a {
+    color: #D2D1D1 !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+nav a:hover {
+    color: white !important;
+}
+
+.selected_navbar {
+    color: white !important;
+    border-bottom: 3px solid rgb(29,186,84);
+}
+
+/*************************/
+/* Part C: Artists Panel */
+/*************************/
+
+#featured-content {
+    flex-direction: row;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.artist-card {
+    width: 20%;
+    padding: 15px;
+}
+
+.artist-card > div {
+    border-radius: 10px;
+    background-color: #222;
+    padding-bottom: 50px;
+}
+
+.artist-card img {
+    width: 80%;
+    margin: 10%; 
+    align-items: center;
+    border-radius: 50%;
+}
+
+.artist-card h3, .artist-card p {
+    margin-top: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 8px;
+}
+
+.play-button i {
+    display: none;
+}
+
+.artist-card > div:hover .play-button i {
+    display: inline;
+    margin-left: 60%;
+    background-color: rgb(29,186,84);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+/**************************/
+/* Part D: Responsive UIs */
+/**************************/
+
+@media screen and (max-width: 1200px) {
+    .artist-card {
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .artist-card {
+        width: 50%;
+    }
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: auto 100px;
+        grid-template-areas:
+           "main"
+           "bottom";
+    }
+    header {
+        width: 100%;
+        left: 0;
+    }
+    #sidebar {
+        display: none;
+    }
+    #upgrade {
+        display: none;
+    }
+}
